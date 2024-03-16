@@ -17,7 +17,7 @@ export default function Actions() {
   };
 
   return (
-    <div className='flex gap-4'>
+    <div className='flex justify-center gap-4'>
       <Button disabled={page === 1} onClick={() => pageHandler('previous')}>
         Previous
       </Button>
