@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-import { Pokemons } from '@/app/interfaces';
+import { Pokemons, PokemonDetails } from '@/app/interfaces';
 
 export const pokemonListState = atom<Pokemons>({
   key: 'pokemonListState',
@@ -9,6 +9,16 @@ export const pokemonListState = atom<Pokemons>({
     next: null,
     previous: null,
     results: []
+  },
+});
+
+export const pokemonDetailsState = atom<PokemonDetails>({
+  key: 'pokemonDetailsState',
+  default: {
+    id: 0,
+    name: '',
+    abilities: [],
+    species: [],
   },
 });
 

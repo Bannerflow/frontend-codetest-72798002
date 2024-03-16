@@ -2,10 +2,10 @@
 
 import { useRecoilState } from 'recoil';
 
-import Button from '@/app/UI/Button';
+import Button from '@/app/components/UI/Button';
 import { paginationState } from '@/app/state/atoms';
 
-export default function Actions() {
+export default function Pagination() {
   const [page, setPage] = useRecoilState(paginationState);
 
   const pageHandler = (where: 'next' | 'previous') => {

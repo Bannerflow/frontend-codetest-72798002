@@ -1,5 +1,7 @@
-import Card from '@/app/UI/Card';
-import Image from '@/app/UI/Image';
+import { useRouter } from 'next/navigation';
+
+import Card from '@/app/components/UI/Card';
+import Image from '@/app/components/UI/Image';
 import { Pokemon } from '@/app/interfaces';
 import { POKEMON_IMAGE_URL } from '@/app/constants';
 
@@ -8,12 +10,18 @@ interface PokemonProps {
 }
 
 export default function Pokemon({ pokemon }: PokemonProps) {
+  const router = useRouter();
+
   const id = pokemon.url.split('/')[6];
-  const imageUrl = `${POKEMON_IMAGE_URL}/${id}.png`;
+  const imageSrc = `${POKEMON_IMAGE_URL}/${id}.png`;
+
+  function goToPokemonDetailsPage() {
+    router.push(`/pokemon/${id}`);
+  }
 
   return (
-    <Card>
-      <Image src={imageUrl} alt={pokemon.name} width={130} height={130} />
+    <Card onClick={goToPokemonDetailsPage}>
+      <Image src={imageSrc} alt={pokemon.name} width={100} height={100} />
       <p>{pokemon.name}</p>
     </Card>
   );
