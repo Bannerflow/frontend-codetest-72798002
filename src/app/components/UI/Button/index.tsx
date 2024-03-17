@@ -5,8 +5,7 @@ interface ButtonProps extends ComponentProps<'button'> {
 }
 
 export default function Button({ children, disabled, ...rest }: ButtonProps) {
-  let classes =
-    'bg-transparent border-solid border-2 border-[#0058ff] rounded-2xl w-[100px] p-2 text-[#0058ff]';
+  let classes = 'bg-[#0058ff] rounded-2xl w-[100px] p-2 text-white';
 
   if (disabled) {
     classes = classes + ' opacity-50 cursor-not-allowed';

@@ -26,7 +26,29 @@ export interface Abilities {
   slot: number;
 }
 
+export interface PokemonSpecies {
+  evolution_chain: {
+    url: string;
+  };
+}
+
+export interface PokemonEvolutions {
+  chain: {
+    evolves_to: Evolution[];
+  }
+}
+
+export interface Evolution {
+  species: {
+    name: string;
+    url: string;
+  };
+  is_baby: boolean;
+  evolves_to: Evolution[] | [];
+}
+
 interface Species {
   name: string;
   url: string;
 }
+

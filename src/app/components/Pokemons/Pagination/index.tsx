@@ -1,5 +1,3 @@
-'use client';
-
 import { useRecoilState } from 'recoil';
 
 import Button from '@/app/components/UI/Button';

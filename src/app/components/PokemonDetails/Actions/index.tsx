@@ -1,7 +1,7 @@
+'use client';
+
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-
-import Button from '@/app/components/UI/Button';
 
 export default function Actions() {
   const [buttonText, setButtonText] = useState<'Copy link' | 'Copied!'>(
@@ -22,7 +22,12 @@ export default function Actions() {
 
   return (
     <div className='w-full'>
-      <Button onClick={copyToClipboard}>{buttonText}</Button>
+      <p
+        className='text-[#0058ff] text-base font-medium cursor-pointer'
+        onClick={copyToClipboard}
+      >
+        {buttonText}
+      </p>
     </div>
   );
 }

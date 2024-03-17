@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-import { Pokemons, PokemonDetails } from '@/app/interfaces';
+import { Pokemons, PokemonDetails, PokemonEvolutions } from '@/app/interfaces';
 
 export const pokemonListState = atom<Pokemons>({
   key: 'pokemonListState',
@@ -20,6 +20,15 @@ export const pokemonDetailsState = atom<PokemonDetails>({
     abilities: [],
     species: [],
   },
+});
+
+export const pokemonEvolutionsState = atom<PokemonEvolutions>({
+  key: 'pokemonEvolutionsState',
+  default: {
+    chain: {
+      evolves_to: []
+    }
+  }
 });
 
 export const paginationState = atom({

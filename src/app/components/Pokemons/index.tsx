@@ -4,8 +4,9 @@ import { useRecoilValue } from 'recoil';
 
 import Pagination from '@/app/components/Pokemons/Pagination';
 import Pokemon from '@/app/components/Pokemons/Pokemon';
-import usePokemons from '@/app/hooks/use-pokemons';
+import Error from '@/app/components/UI/Error';
 import Loading from '@/app/components/UI/Loading';
+import usePokemons from '@/app/hooks/use-pokemons';
 import { paginationState, pokemonListState } from '@/app/state/atoms';
 
 export default function Pokemons() {
@@ -16,6 +17,12 @@ export default function Pokemons() {
   const pokemonList = pokemons.results.map((pokemon) => {
     return <Pokemon key={pokemon.name} pokemon={pokemon} />;
   });
+
+  if (error) {
+    return (
+      <Error text='Something went wrong while fetching your pokemons. Please try again later.' />
+    );
+  }
 
   return isLoading ? (
     <div className='flex justify-center'>

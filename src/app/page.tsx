@@ -1,4 +1,11 @@
+import { Metadata } from 'next';
+
 import Pokemons from '@/app/components/Pokemons';
+
+export const metadata: Metadata = {
+  title: 'Pokemons',
+  description: 'Pokemons page - Bannerflow challenge',
+};
 
 export default function PokemonsPage() {
   return (
