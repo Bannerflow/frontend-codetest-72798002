@@ -1,1 +1,1 @@
-export { default } from '@/app/components/pokemons/pagination/Pagination';
+export { default } from './Pagination';

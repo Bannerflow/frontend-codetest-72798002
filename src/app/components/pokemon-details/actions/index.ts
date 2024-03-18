@@ -1,1 +1,1 @@
-export { default } from '@/app/components/pokemon-details/actions/Actions';
+export { default } from './Actions';

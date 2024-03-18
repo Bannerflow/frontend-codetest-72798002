@@ -1,1 +1,1 @@
-export { default } from '@/app/atoms/loading/Loading';
+export { default } from './Loading';

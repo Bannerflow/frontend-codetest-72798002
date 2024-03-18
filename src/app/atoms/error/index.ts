@@ -1,1 +1,1 @@
-export { default } from '@/app/atoms/error/Error';
+export { default } from './Error';

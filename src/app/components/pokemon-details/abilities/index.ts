@@ -1,2 +1,2 @@
 
-export { default } from '@/app/components/pokemon-details/abilities/Abilities';
+export { default } from './Abilities';

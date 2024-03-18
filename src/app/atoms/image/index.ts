@@ -1,1 +1,1 @@
-export { default } from '@/app/atoms/image/Image';
+export { default } from './Image';

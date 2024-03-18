@@ -1,1 +1,1 @@
-export { default } from '@/app/atoms/card/Card';
+export { default } from './Card';

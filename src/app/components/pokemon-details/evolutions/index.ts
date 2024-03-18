@@ -1,1 +1,1 @@
-export { default } from '@/app/components/pokemon-details/evolutions/Evolutions';
+export { default } from './Evolutions';

@@ -1,1 +1,1 @@
-export { default } from '@/app/atoms/button/Button';
+export { default } from './Button';

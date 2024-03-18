@@ -1,2 +1,2 @@
 
-export { default } from '@/app/components/pokemon-details/PokemonDetails';
+export { default } from './PokemonDetails';
