@@ -2,10 +2,10 @@
 
 import { useRecoilValue } from 'recoil';
 
-import Pagination from '@/app/components/Pokemons/Pagination';
-import Pokemon from '@/app/components/Pokemons/Pokemon';
-import Error from '@/app/components/UI/Error';
-import Loading from '@/app/components/UI/Loading';
+import Error from '@/app/atoms/error';
+import Loading from '@/app/atoms/loading';
+import Pagination from '@/app/components/pokemons/pagination';
+import Pokemon from '@/app/components/pokemons/pokemon';
 import usePokemons from '@/app/hooks/use-pokemons';
 import { paginationState, pokemonListState } from '@/app/state/atoms';
 

@@ -3,20 +3,21 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { ButtonText } from '@/app/constants';
+import { ButtonTextType } from '@/app/types';
+
 export default function Actions() {
-  const [buttonText, setButtonText] = useState<'Copy link' | 'Copied!'>(
-    'Copy link'
-  );
+  const [buttonText, setButtonText] = useState<ButtonTextType>(ButtonText.COPY);
   const pathname = usePathname();
 
   async function copyToClipboard() {
     await navigator.clipboard.writeText(
       `${window.location.origin}/${pathname}`
     );
-    setButtonText('Copied!');
+    setButtonText(ButtonText.COPIED);
 
     setTimeout(() => {
-      setButtonText('Copy link');
+      setButtonText(ButtonText.COPY);
     }, 2000);
   }
 

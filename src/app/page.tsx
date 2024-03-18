@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import Pokemons from '@/app/components/Pokemons';
+import Pokemons from '@/app/components/pokemons';
 
 export const metadata: Metadata = {
   title: 'Pokemons',

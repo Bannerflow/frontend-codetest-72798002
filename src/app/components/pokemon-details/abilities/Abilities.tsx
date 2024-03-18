@@ -1,4 +1,4 @@
-import Card from '@/app/components/UI/Card';
+import Card from '@/app/atoms/card';
 import { Abilities } from '@/app/interfaces';
 
 interface AbilitiesProps {

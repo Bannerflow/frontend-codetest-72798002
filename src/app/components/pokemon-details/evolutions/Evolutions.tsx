@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 
-import Pokemon from '@/app/components/Pokemons/Pokemon';
+import Pokemon from '@/app/components/pokemons/pokemon';
 import { POKEMON_BASE_URL } from '@/app/constants';
 import { getEvolutions } from '@/app/helpers/pokemons';
 import { Pokemon as IPokemon } from '@/app/interfaces';

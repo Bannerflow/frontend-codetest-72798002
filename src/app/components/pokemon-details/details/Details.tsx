@@ -1,10 +1,10 @@
 import { useRecoilValue } from 'recoil';
 
-import Abilities from '@/app/components/PokemonDetails/Abilities';
-import Actions from '@/app/components/PokemonDetails/Actions';
-import Title from '@/app/components/PokemonDetails/Title';
-import Card from '@/app/components/UI/Card';
-import Image from '@/app/components/UI/Image';
+import Card from '@/app/atoms/card';
+import Image from '@/app/atoms/image';
+import Abilities from '@/app/components/pokemon-details/abilities';
+import Actions from '@/app/components/pokemon-details/actions';
+import Title from '@/app/components/pokemon-details/title';
 import { POKEMON_IMAGE_URL } from '@/app/constants';
 import { pokemonDetailsState } from '@/app/state/atoms';
 

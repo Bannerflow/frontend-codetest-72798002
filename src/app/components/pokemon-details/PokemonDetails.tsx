@@ -1,7 +1,7 @@
-import Details from '@/app/components/PokemonDetails/Details';
-import Evolutions from '@/app/components/PokemonDetails/Evolutions';
-import Error from '@/app/components/UI/Error';
-import Loading from '@/app/components/UI/Loading';
+import Error from '@/app/atoms/error';
+import Loading from '@/app/atoms/loading';
+import Details from '@/app/components/pokemon-details/details';
+import Evolutions from '@/app/components/pokemon-details/evolutions';
 import usePokemon from '@/app/hooks/use-pokemon';
 import usePokemonEvolutions from '@/app/hooks/use-pokemon-evolution';
 

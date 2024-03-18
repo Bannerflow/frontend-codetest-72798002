@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 
-import Button from '@/app/components/UI/Button';
+import Button from '@/app/atoms/button';
 import { paginationState } from '@/app/state/atoms';
 
 export default function Pagination() {
