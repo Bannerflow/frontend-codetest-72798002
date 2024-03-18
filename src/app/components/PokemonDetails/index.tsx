@@ -1,46 +1,33 @@
-import { useRecoilValue } from 'recoil';
-
-import Abilities from '@/app/components/PokemonDetails/Abilities';
-import Actions from '@/app/components/PokemonDetails/Actions';
-import Title from '@/app/components/PokemonDetails/Title';
-import Card from '@/app/components/UI/Card';
+import Details from '@/app/components/PokemonDetails/Details';
+import Evolutions from '@/app/components/PokemonDetails/Evolutions';
 import Error from '@/app/components/UI/Error';
-import Image from '@/app/components/UI/Image';
 import Loading from '@/app/components/UI/Loading';
 import usePokemon from '@/app/hooks/use-pokemon';
-import { POKEMON_IMAGE_URL } from '@/app/constants';
-import { pokemonDetailsState } from '@/app/state/atoms';
+import usePokemonEvolutions from '@/app/hooks/use-pokemon-evolution';
 
 interface PokemonDetailsProps {
   id: string;
 }
 
 export default function PokemonDetails({ id }: PokemonDetailsProps) {
-  const pokemon = useRecoilValue(pokemonDetailsState);
-  const { isLoading, error } = usePokemon(id);
+  const { error: errorPokemon, isLoading: isLoadingPokemon } = usePokemon(id);
+  const { error: errorEvolutions, isLoading: isLoadingEvolutions } =
+    usePokemonEvolutions(id);
 
-  const imageSrc = `${POKEMON_IMAGE_URL}/${id}.png`;
-
-  if (error) {
+  if (errorPokemon || errorEvolutions) {
     return (
-      <Error text='Something went wrong while fetching your pokemon. Please try again later.' />
+      <Error text='Something went wrong while loading your pokemon detailed information. Please, try again later' />
     );
   }
 
-  return isLoading ? (
+  return isLoadingPokemon || isLoadingEvolutions ? (
     <div className='flex justify-center'>
       <Loading />
     </div>
   ) : (
-    <div className='flex justify-center'>
-      <Card className='xs:w-[22rem] w-[32rem]'>
-        <Title id={id} name={pokemon.name} />
-        <Image src={imageSrc} alt={pokemon.name} width={200} height={200} />
-        <hr className='w-full border-2 border-gray-200 mb-4 mt-4' />
-        <Abilities abilities={pokemon.abilities} />
-        <hr className='w-full border-2 border-gray-200 mb-4 mt-4' />
-        <Actions />
-      </Card>
+    <div className='flex flex-col gap-4'>
+      <Details id={id} />
+      <Evolutions />
     </div>
   );
 }

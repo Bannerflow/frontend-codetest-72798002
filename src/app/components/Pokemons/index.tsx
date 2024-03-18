@@ -15,7 +15,7 @@ export default function Pokemons() {
   const { error, isLoading } = usePokemons(page);
 
   const pokemonList = pokemons.results.map((pokemon) => {
-    return <Pokemon key={pokemon.name} pokemon={pokemon} />;
+    return <Pokemon key={pokemon.name} pokemon={pokemon} w={180} h={180} />;
   });
 
   if (error) {

@@ -10,13 +10,13 @@ export async function GET(_: Request, { params }: PokemonEvolutionsParams) {
   const { id } = params;
 
   try {
-    const pokemonSpecies = await getPokemonSpeciesById(id);
+    const fetchedPokemonSpecies = await getPokemonSpeciesById(id);
 
-    if (pokemonSpecies instanceof Error) {
+    if (fetchedPokemonSpecies instanceof Error) {
       throw new Error();
     }
 
-    const fetchedPokemonEvolutions = await fetch(pokemonSpecies.evolution_chain.url);
+    const fetchedPokemonEvolutions = await fetch(fetchedPokemonSpecies.evolution_chain.url);
 
     if (!fetchedPokemonEvolutions.ok) {
       throw new Error();

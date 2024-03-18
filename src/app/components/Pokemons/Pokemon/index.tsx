@@ -7,9 +7,12 @@ import { POKEMON_IMAGE_URL } from '@/app/constants';
 
 interface PokemonProps {
   pokemon: Pokemon;
+  w: number;
+  h: number;
+  className?: string;
 }
 
-export default function Pokemon({ pokemon }: PokemonProps) {
+export default function Pokemon({ pokemon, w, h, className }: PokemonProps) {
   const router = useRouter();
 
   const id = pokemon.url.split('/')[6];
@@ -20,8 +23,8 @@ export default function Pokemon({ pokemon }: PokemonProps) {
   }
 
   return (
-    <Card onClick={goToPokemonDetailsPage}>
-      <Image src={imageSrc} alt={pokemon.name} width={100} height={100} />
+    <Card className={className} onClick={goToPokemonDetailsPage}>
+      <Image src={imageSrc} alt={pokemon.name} width={w} height={h} />
       <p>{pokemon.name}</p>
     </Card>
   );

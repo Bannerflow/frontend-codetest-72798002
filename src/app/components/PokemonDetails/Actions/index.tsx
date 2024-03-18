@@ -22,12 +22,12 @@ export default function Actions() {
 
   return (
     <div className='w-full'>
-      <p
+      <span
         className='text-[#0058ff] text-base font-medium cursor-pointer'
         onClick={copyToClipboard}
       >
         {buttonText}
-      </p>
+      </span>
     </div>
   );
 }
