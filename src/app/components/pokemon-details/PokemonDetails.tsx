@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 import Error from '@/app/atoms/error';
 import Loading from '@/app/atoms/loading';
 import Details from '@/app/components/pokemon-details/details';
@@ -10,9 +13,22 @@ interface PokemonDetailsProps {
 }
 
 export default function PokemonDetails({ id }: PokemonDetailsProps) {
+  const router = useRouter();
   const { error: errorPokemon, isLoading: isLoadingPokemon } = usePokemon(id);
   const { error: errorEvolutions, isLoading: isLoadingEvolutions } =
     usePokemonEvolutions(id);
+
+  useEffect(() => {
+    const backButtonHandler = () => {
+      router.push('/');
+    };
+
+    window.addEventListener('popstate', () => backButtonHandler());
+
+    return () => {
+      window.removeEventListener('popstate', () => backButtonHandler());
+    };
+  }, [router]);
 
   if (errorPokemon || errorEvolutions) {
     return (

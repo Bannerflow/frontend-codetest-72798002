@@ -25,6 +25,7 @@ const AnimatedImage = ({ src, alt, width, height }: AnimatedImageProps) => {
         alt={alt}
         width={width}
         height={height}
+        priority
         onLoad={() => setIsLoading(false)}
       />
     </div>
